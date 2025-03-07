@@ -5,6 +5,7 @@ import about, dataProfile, home, realtimedemo, staticpredictionForDay,staticpred
 from comum import config
 
 config()
+st.set_option('server.maxUploadSize', 500)
 
 class Multiapp:
     
