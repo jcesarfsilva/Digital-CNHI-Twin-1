@@ -45,7 +45,7 @@ def app():
             
             # Considerando que sempre há um único CSV relevante
             caminhoArquivo = csv_files[0]
-            
+
     with col02:
                         # 🛠 Verificar se o CSV pode ser carregado
                             # # Título principal do aplicativo
@@ -60,12 +60,12 @@ def app():
             # st.error(f"Erro ao carregar o CSV: {e}")
             return
             
-    
     # §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ # 
     entrada = [f'{col}' for col in df.columns if '_RC_All_%' in col]
     saida01 = [f'{col}' for col in df.columns if '_Above_%' in col]
     saida02 = [f'{col}' for col in df.columns if '_media' in col]
     media = [f'{col}' for col in df.columns if 'mediaReg' in col]
+
     # §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ # 
 
 
@@ -76,11 +76,11 @@ def app():
     with col03:
     
         st.markdown("<h4 style='text-align: center; color: black;'> Variaveis de Entrada </h1>", unsafe_allow_html=True)
-        select_upleft = st.selectbox('', entrada)
+        select_upleft = st.selectbox(entrada[0], entrada)
 
     with col04:
         st.markdown("<h4 style='text-align: center; color: black;'> Variáveis de saída </h1>", unsafe_allow_html=True)       
-        select_upright = st.selectbox('', saida01)
+        select_upright = st.selectbox(saida01[0], saida01)
         
     n = len(df)  # Número total de linhas do DataFrame
 
@@ -107,11 +107,11 @@ def app():
     col07, col08 = st.columns(spec=[1, 1])
     with col07:
         st.markdown("<h4 style='text-align: center; color: black;'> Variáveis de Saída </h1>", unsafe_allow_html=True)
-        select_downleft = st.selectbox('', saida02)
+        select_downleft = st.selectbox(saida02[0], saida02)
 
     with col08:
         st.markdown("<h4 style='text-align: center; color: black;'> Media de Anomalia por Dia </h1>", unsafe_allow_html=True)
-        select_downright = st.selectbox('', media)
+        select_downright = st.selectbox(media[0], media)
 
     col09, col10 = st.columns(spec=[1, 1])
     with col09:
